@@ -12,28 +12,14 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.initrd.luks.devices."cryptpart".device = "/dev/disk/by-uuid/ade7c385-a68c-40f3-9fae-8e997aa0dee3";
 
   fileSystems."/" =
-    { device = "/dev/mapper/cryptpart";
-      fsType = "btrfs";
-      options = [ "compress=zstd:1" "noatime" "subvol=root" ];
-    };
-
-  fileSystems."/home" =
-    { device = "/dev/mapper/cryptpart";
-      fsType = "btrfs";
-      options = [ "compress=zstd:1" "noatime" "subvol=home" ];
-    };
-
-  fileSystems."/nix" =
-    { device = "/dev/mapper/cryptpart";
-      fsType = "btrfs";
-      options = [ "compress=zstd:1" "noatime" "subvol=nix" ];
+    { device = "/dev/disk/by-label/nixos-hypr";
+      fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/D586-8FFE";
+    { device = "/dev/disk/by-label/BOOT";
       fsType = "vfat";
     };
 
@@ -47,7 +33,6 @@
   # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
 

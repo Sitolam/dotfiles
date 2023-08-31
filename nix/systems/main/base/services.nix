@@ -26,7 +26,7 @@
     };
     virtualisation = {
         docker.enable = true;
-        docker.storageDriver = "ext4";
+        docker.storageDriver = "btrfs";
         spiceUSBRedirection.enable = true;
         libvirtd = {
             enable = true;

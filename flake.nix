@@ -33,7 +33,7 @@
       };
     };
     nixosConfigurations = {
-      japtop = nixpkgs.lib.nixosSystem {
+      laptop = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit username flake_path inputs; }; 
         modules = [

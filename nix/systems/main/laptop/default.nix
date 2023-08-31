@@ -7,11 +7,11 @@
         ];
 
     # System
-    networking.hostName="japtop";
+    networking.hostName="laptop";
 
     #Programs
     programs = {
-        zsh.shellAliases.nix-switch = "sudo nixos-rebuild switch --flake ${flake_path}#japtop";
+        zsh.shellAliases.nix-switch = "sudo nixos-rebuild switch --flake ${flake_path}#laptop";
         light.enable = true;
     };
 

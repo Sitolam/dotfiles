@@ -62,12 +62,6 @@
             nvidiaPatches = true;
             xwayland.enable = true;
         };
-        environment.sessionVariables = {
-            # If your cursor becomes invisible
-            # WLR_NO_HARDWARE_CURSORS = "1";
-            # Hint electron apps to use wayland
-            NIXOS_OZONE_WL = "1";
-        };
         thunar = {
             enable = true;
             plugins = with pkgs.xfce; [ 
@@ -100,6 +94,11 @@
                 all-update = "sudo nix flake update ${flake_path}# && all-switch";
             };
         };
+    environment.sessionVariables = {
+    # If your cursor becomes invisible
+    # WLR_NO_HARDWARE_CURSORS = "1";
+    # Hint electron apps to use wayland
+    NIXOS_OZONE_WL = "1";
     };
-}
 
+}

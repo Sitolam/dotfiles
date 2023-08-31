@@ -4,7 +4,7 @@
     mpdris2.enable = true;
     mpd = {
       enable = true;
-      musicDirectory = "/home/justinlime/music";
+      musicDirectory = "/home/otis/music";
       network.startWhenNeeded = true;  
       extraConfig = ''
         audio_output {

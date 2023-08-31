@@ -19,16 +19,16 @@
     nixpkgs.config.allowUnfree = true;
 
     #Set your time zone.
-    time.timeZone = "America/Chicago";
+    time.timeZone = "Europe/Brussels";
 
     users = {
         defaultUserShell = pkgs.zsh;
         groups = {
             "${username}" = {};
         };
-        users.justinlime = {
+        users.otis = {
             isNormalUser = true;
-            initialPassword = "gigachad";
+            initialPassword = "nixos";
             extraGroups = [ "wheel" "docker" "video" "libvirtd" "plugdev" "${username}" ];
             packages = with pkgs; [
             ];

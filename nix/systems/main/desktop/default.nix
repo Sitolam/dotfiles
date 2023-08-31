@@ -7,7 +7,7 @@
         ];
 
     # System
-    networking.hostName = "jesktop";
+    networking.hostName = "nixosbox";
     programs.steam.enable = true;
     environment = {
         systemPackages = with pkgs; [
@@ -16,5 +16,5 @@
     };
 
     #Programs
-    programs.zsh.shellAliases.nix-switch = "sudo nixos-rebuild switch --flake ${flake_path}#jesktop";
+    programs.zsh.shellAliases.nix-switch = "sudo nixos-rebuild switch --flake ${flake_path}#desktop";
 }

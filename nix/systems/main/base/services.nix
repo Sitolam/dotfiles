@@ -16,6 +16,7 @@
             alsa.enable = true;
             alsa.support32Bit = true;
             pulse.enable = true;
+            jack.enable = true;
         };
     };
     xdg.portal = {
@@ -25,7 +26,7 @@
     };
     virtualisation = {
         docker.enable = true;
-        docker.storageDriver = "btrfs";
+        docker.storageDriver = "ext4";
         spiceUSBRedirection.enable = true;
         libvirtd = {
             enable = true;

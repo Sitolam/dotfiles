@@ -24,6 +24,7 @@
             tree-sitter
             unzip
             vim
+            micro
             virt-manager
             virt-viewer
             spice
@@ -37,7 +38,7 @@
             wl-clipboard
             zip
         ];
-        variables = { EDITOR = "vim"; };
+        variables = { EDITOR = "micro"; };
         pathsToLink = [ "/share/zsh" ];
     };
 
@@ -46,12 +47,27 @@
     #     (nerdfonts.override { fonts = ["JetBrainsMono"]; })
     # ];
     
-    hardware.opengl.enable = true;
+    hardware = {
+        # Opengl
+        opengl.enable = true;
+        # Most wayland compositors need this
+        nvidia.modesetting.enable = true;
+    };
     #Programs
     programs = {
         dconf.enable = true;
         direnv.enable = true;
-        hyprland.enable = true;
+        hyprland = {
+            enable = true;
+            nvidiaPatches = true;
+            xwayland.enable = true;
+        };
+        environment.sessionVariables = {
+            # If your cursor becomes invisible
+            # WLR_NO_HARDWARE_CURSORS = "1";
+            # Hint electron apps to use wayland
+            NIXOS_OZONE_WL = "1";
+        };
         thunar = {
             enable = true;
             plugins = with pkgs.xfce; [ 

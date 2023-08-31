@@ -11,11 +11,11 @@ function randomquote()
         "Whopper Whopper Whopper Whopper Junior Double Triple Whopper",
         "White Monster",
         "The system plays us everday...",
-        "sudo systemctl restart justinlime",
-        "sudo systemctl start justinlime",
-        "sudo systemctl stop justinlime",
-        "sudo systemctl enable justinlime",
-        "sudo systemctl disable justinlime",
+        "sudo systemctl restart otis",
+        "sudo systemctl start otis",
+        "sudo systemctl stop otis",
+        "sudo systemctl enable otis",
+        "sudo systemctl disable otis",
     }
     return quote[math.random(1,#quote)] 
 end

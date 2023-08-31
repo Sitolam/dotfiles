@@ -1,4 +1,4 @@
-# Justinlime's Neovim Config
+# otis's Neovim Config
 ![Imgur](https://imgur.com/2gll0Qy.png)
 ![Imgur](https://imgur.com/00mKFGY.png)
 ![Imgur](https://imgur.com/MZZSVBI.png)

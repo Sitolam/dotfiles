@@ -21,7 +21,7 @@ if [ $? -eq 1 ]; then
 fi
 }
 install() {
-    git clone --depth 1 https://github.com/justinlime/dotfiles
+    git clone --depth 1 https://github.com/otis/dotfiles
     cd dotfiles
     # Backup old dirs
     mv ~/.config/nvim ~/.config/nvim.old

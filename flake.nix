@@ -12,8 +12,8 @@
   outputs = {  self, nixpkgs, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
-    username = "justinlime";
-    home_profile = "brimstone";
+    username = "otis";
+    home_profile = "otis";
     pkgs = nixpkgs.legacyPackages.${system};
     # The path to this very repo 
     flake_path = "~/dotfiles";
@@ -42,7 +42,7 @@
           { nix.nixPath = [ "nixpkgs=configflake:nixpkgs" ]; }
         ];
       };
-      jesktop = nixpkgs.lib.nixosSystem {
+      desktop = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit username flake_path inputs; }; 
         modules = [
